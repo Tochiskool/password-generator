@@ -44,4 +44,13 @@ function generatePassword() {
      totalCharacters = [...specialChars, ...numbericChars, ...capitalLetters , ...smallLetters];
   }
   //Special logic
+  //passwordCriteria is used as the dynamic length to determine how many times we loop randomly through the totalcharacters array
+  for (var i = 0; i < passwordCriteria; i++) {
+    //We push everything into the randomResult array base on the number chosen by the authorizer
+      randomResult.push(totalCharacters[Math.floor(Math.random()*totalCharacters.length)])
+    //We join them without space and return the result
+    arrayResults = randomResult.join("");
+  }
+  //Voila!!! Now it looks
+  return arrayResults;
 }
